@@ -1,35 +1,31 @@
-# 你好，我是叶立恒 👋
+# Hi, I'm Liheng Ye
 
-**Agent 应用开发方向 · GitHub @yeliheng-010 · 诉说晚秋**
+**Agent application development** · Python, LangGraph & TypeScript · 叶立恒
 
-我在做基于 LangGraph 的 AI 应用，关注工作流编排、工具调用、上下文与检索，以及模型调用的可靠性。希望把从问题复现、代码修复到测试和部署的过程，沉淀为可运行的项目和可核验的开源贡献。
+Building AI applications and submitting patches to [Tencent/WeKnora](https://github.com/Tencent/WeKnora) and [HKUDS/LightRAG](https://github.com/HKUDS/LightRAG) · Open to Agent / LLM application development opportunities
 
-[个人博客](https://blog.miansu.eu.cc) · [技术文章](https://blog.miansu.eu.cc/archive/) · [我的开源 PR](https://github.com/pulls?q=is%3Apr+author%3Ayeliheng-010)
+> I build agent workflows with explicit state, traceable evidence, and clear failure handling.
 
-## 项目实践
+## What I work on
 
-| 项目 | 我在实践什么 | 技术栈 |
-| --- | --- | --- |
-| [AI Interview Studio](https://github.com/yeliheng-010/ai-interview-studio) | 把简历分析、面试规划、问题生成、修复与回答评价建模为显式工作流，结合结构化校验与业务数据持久化 | Python · FastAPI · LangGraph · PostgreSQL · Next.js |
-| [CodeRag](https://github.com/yeliheng-010/CodeRag) | 面向代码仓库的 Agentic GraphRAG：混合检索、符号图扩展、调用路径工具，以及可追踪的执行过程和引用 | LangGraph · Tree-sitter · KuzuDB · Chroma · BM25 · React |
+- **Agent workflows** — interview planning, question generation, validation and repair, with a separate workflow for answer evaluation. Built with LangGraph and structured intermediate state. ([project](https://github.com/yeliheng-010/ai-interview-studio) · [write-up](https://blog.miansu.eu.cc/posts/langgraph-interview-workflow/))
+- **Code retrieval & tools** — combine keyword and vector search with symbol graphs, graph expansion and call-path tools; expose citations and execution traces in the UI. ([project](https://github.com/yeliheng-010/CodeRag) · [write-up](https://blog.miansu.eu.cc/posts/agentic-graphrag-learning-notes/))
+- **Integration reliability** — investigate HTTP failures, incomplete resource discovery and inconsistent UI state; turn reproducible bugs into small patches and regression tests. ([upstream PRs](https://github.com/search?q=is%3Apr+author%3Ayeliheng-010+-user%3Ayeliheng-010&type=pullrequests))
 
-## 开源贡献
+## Projects
 
-围绕真实问题提交补丁，并记录复现、测试、维护者反馈和后续修正。以下状态核查于 **2026-09-23**，四个 PR 均尚未合并；最新状态以链接中的上游记录为准。
+- **[AI Interview Studio](https://github.com/yeliheng-010/ai-interview-studio)** — an interview practice application that turns a resume and job description into tailored questions, supports regeneration, and evaluates written answers. LangGraph + FastAPI + PostgreSQL + Next.js.
+- **[CodeRag](https://github.com/yeliheng-010/CodeRag)** — an Agentic GraphRAG application for code repositories, with symbol-aware retrieval, call-path exploration and evidence-backed answers. Tree-sitter + KuzuDB + Chroma + LangGraph.
 
-| 项目 / PR | 贡献内容 | 当前进展 | 技术复盘 |
-| --- | --- | --- | --- |
-| [WeKnora #3548](https://github.com/Tencent/WeKnora/pull/3548) | 文档切片类型筛选，补齐 OCR / 图片描述的展示与重载状态 | 已响应维护者反馈，待后续审核 | [切片展示与状态一致性](https://blog.miansu.eu.cc/posts/weknora-chunk-type-filter/) |
-| [WeKnora #3620](https://github.com/Tencent/WeKnora/pull/3620) | 补充 Docker Compose 下的 Swagger 访问与排障文档 | 待审核，远端扫描有失败项 | [HTTP 200 背后的服务路由](https://blog.miansu.eu.cc/posts/weknora-swagger-docker/) |
-| [WeKnora #3624](https://github.com/Tencent/WeKnora/pull/3624) | 修复 GitLab 项目资源发现的分页遗漏，补充边界回归测试 | 扫描通过，待审核 | [201 个项目为何只返回 100 个](https://blog.miansu.eu.cc/posts/weknora-gitlab-pagination/) |
-| [LightRAG #4057](https://github.com/HKUDS/LightRAG/pull/4057) | 正确传播 LoLLMs 普通、流式与向量调用的 HTTP 错误 | 已补修 CI 测试兼容问题，待复审及新 CI | [模型服务失败与 CI 补修](https://blog.miansu.eu.cc/posts/lightrag-lollms-http-errors/) |
+## Open-source work
 
-贡献过程中使用 AI 辅助源码分析、实现和验证；具体改动、测试范围及协作过程见各 PR 与复盘文章。
+Selected submitted patches — **all four PRs are open, not yet merged, as of September 23, 2026**. Links below show their latest status.
 
-## 持续学习
+- **LightRAG: model API errors** — reject unsuccessful HTTP responses before consuming generated text, streams or embeddings; add regression coverage and fix a CI mock compatibility issue. ([#4057](https://github.com/HKUDS/LightRAG/pull/4057) · [write-up](https://blog.miansu.eu.cc/posts/lightrag-lollms-http-errors/))
+- **WeKnora: resource discovery** — follow GitLab pagination headers so project discovery returns more than the first 100 resources; test later-page failures. ([#3624](https://github.com/Tencent/WeKnora/pull/3624) · [write-up](https://blog.miansu.eu.cc/posts/weknora-gitlab-pagination/))
+- **WeKnora: multimodal inspection** — add OCR and image-description chunk filters, preserving the selected type across reloads and resetting it when returning to full-text view. ([#3548](https://github.com/Tencent/WeKnora/pull/3548) · [write-up](https://blog.miansu.eu.cc/posts/weknora-chunk-type-filter/))
+- **WeKnora: developer docs** — clarify Swagger access under Docker Compose, including backend ports, runtime mode and container recreation. ([#3620](https://github.com/Tencent/WeKnora/pull/3620) · [write-up](https://blog.miansu.eu.cc/posts/weknora-swagger-docker/))
 
-- **Agent 工作流**：显式状态、结构化输出、校验与修复循环。
-- **工具与上下文**：MCP 工具契约、检索证据、符号图与引用追踪。
-- **工程可靠性**：HTTP 错误、流式边界、分页完整性和回归测试。
+Reproduction steps, validation scope and AI-assisted development details are documented in the linked PRs and write-ups.
 
-欢迎通过项目 Issue 交流 Agent 应用与开源实践。
+📫 [yeliheng3@gmail.com](mailto:yeliheng3@gmail.com) · [Blog / 中文技术笔记](https://blog.miansu.eu.cc)
